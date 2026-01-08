@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>AI Matches | FoundIt</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>🤖 AI Match Results</h2>
+    <p class="sub">
+        Our AI analyzed item name, description, and location
+    </p>
+
+    <!-- WHEN NO MATCHES -->
+    <div th:if="${matches == null or matches.isEmpty()}">
+        <p style="margin-top:30px;">
+            ❌ No matches found yet.
+        </p>
+        <p style="color:#555;">
+            AI will continue monitoring new found items automatically.
+        </p>
+    </div>
+
+    <!-- WHEN MATCHES EXIST -->
+    <div th:if="${matches != null and !matches.isEmpty()}">
+
+        <div th:each="item : ${matches}" class="card" style="margin-top:25px;">
+
+            <h3 th:text="${item.itemName}">Item Name</h3>
+
+            <p th:text="${item.description}">
+                Item description
+            </p>
+
+            <p>
+                📍 <b>Found at:</b>
+                <span th:text="${item.foundLocation}"></span>
+            </p>
+
+            <p>
+                🏫 <b>Kept at:</b>
+                <span th:text="${item.keptAt}"></span>
+            </p>
+
+            <p style="margin-top:10px;">
+                🧠 <b>AI Confidence:</b>
+                <span style="color:green;font-weight:bold;">
+                    95%
+                </span>
+            </p>
+
+            <!-- IMAGE PREVIEW -->
+            <div th:if="${item.image != null}" style="margin-top:15px;">
+                <img th:src="@{/found/image/{id}(id=${item.id})}"
+                     alt="Found Item Image"
+                     style="max-width:100%;border-radius:12px;">
+            </div>
+
+            <!-- HANDOVER MESSAGE -->
+            <p style="margin-top:15px;color:#1e3a8a;">
+                🤝 Please contact the finder to collect your item.
+            </p>
+
+        </div>
+
+    </div>
+
+    <a href="/dashboard" class="link" style="margin-top:30px;">
+        ⬅ Back to Dashboard
+    </a>
+
+</div>
+
+<div class="ai-box">
+    🧠 AI continuously learns from new reports
+</div>
+
+</body>
+</html>

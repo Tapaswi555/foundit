@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Report Found Item</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="page">
+  <div class="glass">
+    <h2>📦 Found Item</h2>
+
+    <form method="post" action="/found" enctype="multipart/form-data">
+
+      <input name="itemName" placeholder="Item Name" required>
+      <input name="foundLocation" placeholder="Where you found it" required>
+
+      <textarea name="description"
+        placeholder="Describe the item clearly"
+        required></textarea>
+
+      <input name="keptAt"
+        placeholder="Where is the item kept now? (Hostel / Dept / Security)"
+        required>
+
+      <input type="file" name="image" accept="image/*" required>
+
+      <button class="btn">Submit Found Item</button>
+    </form>
+
+  </div>
+</div>
+
+</body>
+</html>

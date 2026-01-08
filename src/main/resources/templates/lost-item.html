@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Report Lost Item</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="center-page">
+
+<div class="card">
+    <h2>🔍 Report Lost Item</h2>
+    <p class="subtitle">AI will try to match this with found items</p>
+
+    <form th:action="@{/lost}" th:object="${lostItem}" method="post">
+
+        <input type="text"
+               th:field="*{itemName}"
+               placeholder="Item name"
+               required />
+
+        <input type="text"
+               th:field="*{location}"
+               placeholder="Where did you lose it?"
+               required />
+
+        <textarea th:field="*{description}"
+                  placeholder="Describe the item in detail"
+                  required></textarea>
+
+        <button type="submit">Submit Lost Item</button>
+    </form>
+
+    <a href="/dashboard" class="link">⬅ Back to Dashboard</a>
+</div>
+
+</body>
+</html>

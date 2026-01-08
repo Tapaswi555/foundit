@@ -1,0 +1,126 @@
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;font-family:'Segoe UI',sans-serif}
+
+body{
+  background:linear-gradient(135deg,#eef2ff,#fdfcff);
+  color:#0f172a;
+}
+
+/* ===== CENTER SYSTEM ===== */
+.page{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+/* ===== GLASS CARD ===== */
+.glass{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,.65);
+  backdrop-filter:blur(14px);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 25px 60px rgba(0,0,0,.18);
+}
+
+/* ===== HEADINGS ===== */
+h1{font-size:44px;text-align:center;color:#1e3a8a}
+h2{font-size:28px;text-align:center;color:#1e3a8a;margin-bottom:14px}
+p.sub{text-align:center;color:#475569;margin-bottom:18px}
+
+/* ===== INPUTS ===== */
+input,textarea{
+  width:100%;
+  padding:12px 14px;
+  margin-bottom:14px;
+  border-radius:12px;
+  border:1px solid #c7d2fe;
+  font-size:15px;
+}
+textarea{min-height:90px}
+
+/* ===== BUTTON ===== */
+.btn{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:hover{opacity:.95}
+
+/* ===== LINKS ===== */
+a{color:#2563eb;text-decoration:none;font-weight:500}
+
+/* ===== AI BOX ===== */
+.ai-box{
+  margin-top:18px;
+  padding:14px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#e0f2ff,#f0f9ff);
+  color:#0b3b6f;
+  font-size:14px;
+}
+
+/* ===== AUTH LAYOUT ===== */
+.auth{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+
+.auth-left{
+  background:linear-gradient(135deg,#2563eb,#1e40af);
+  color:white;
+  padding:70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.auth-left h1{color:white}
+.auth-left p{font-size:18px;opacity:.9}
+
+.auth-right{
+  display:grid;
+  place-items:center;
+}
+
+/* ===== DASHBOARD ===== */
+.board{max-width:760px;width:100%}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.card{
+  background:white;
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+  transition:.2s;
+}
+.card:hover{transform:translateY(-6px)}
+.card h3{color:#1e3a8a;margin-bottom:8px}
+
+/* ===== MATCH BAR ===== */
+.bar{
+  height:12px;
+  background:#e5e7eb;
+  border-radius:999px;
+  margin:8px 0;
+}
+.fill{
+  height:100%;
+  background:linear-gradient(90deg,#22c55e,#16a34a);
+  border-radius:999px;
+}
+
+/* ===== FOOTER ===== */
+.footer{text-align:center;margin-top:16px;color:#64748b}
